@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authorize, only: [:create]
 
     def index
         users = User.all
@@ -23,6 +24,6 @@ class UsersController < ApplicationController
       private
 
       def user_params
-        params.permit(:username, :password, :type, :display_name)
+        params.permit(:id, :username, :password, :type, :display_name)
       end
 end

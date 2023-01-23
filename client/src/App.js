@@ -1,12 +1,19 @@
-import React, { useEffect, useState } from "react";
-import logo from './logo.svg';
-import './App.css';
+import React, {useState, useEffect, useContext} from "react-dom";
+import logo from "./logo.svg";
+import "./App.css";
+import { UserContext } from "./context/userContext";
+
 
 function App() {
-const [user, setUser] = useState(null)
+const [currentUser, setCurrentUser] = useContext(UserContext)
 
+  // useEffect(()=>{
+  //   fetch("/me")
+  //   .then((response) => response.json())
+  //   .then((user) => setUser(user))
+  // })
 
-  if (!user) return <Login setUser={setUser}/>
+  
 
   return (
     <div className="App">
