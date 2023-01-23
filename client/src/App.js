@@ -1,7 +1,13 @@
+import React, { useEffect, useState } from "react";
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+const [user, setUser] = useState(null)
+
+
+  if (!user) return <Login setUser={setUser}/>
+
   return (
     <div className="App">
       <header className="App-header">
